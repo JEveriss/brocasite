@@ -1,0 +1,13 @@
+.first {
+  display: flex;
+  height: 100%;
+  place-content: center;
+}
+
+.second {
+  margin: auto;
+  width: auto;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}

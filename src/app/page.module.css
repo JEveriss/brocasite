@@ -4,14 +4,16 @@
   background: #ff5b5b;
   overflow: scroll;
   margin: auto;
-  align-content: center;
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
-  overflow-y: scroll;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  scroll-snap-type: y mandatory;
+}
+.test::-webkit-scrollbar {
+  display: none;
 }
 
 .main {
@@ -19,7 +21,6 @@
   height: 100vh;
   width: 100vw;
   background-repeat: no-repeat;
-  /* background-position: 50% 0; */
   background-size: cover;
   background-position: top;
   background-attachment: fixed;
@@ -31,4 +32,12 @@
   width: 90%;
   object-fit: contain;
   display: block;
+  scroll-snap-align: center;
+}
+
+.test {
+  position: fixed; /* make sure it stays put so we can see it! */
+  animation: rotate 1s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
 }
